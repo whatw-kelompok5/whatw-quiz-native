@@ -12,7 +12,7 @@ export default function SplashScreenComponent({navigation}) {
             if (SplashScreen){
                 SplashScreen.hide();
             }
-            navigation.navigate('Login');
+            navigation.navigate('Auth');
         }, 3000);
   return (
     <ImageBackground source={require('../assets/background.png')} style={{ flex: 1 }}>

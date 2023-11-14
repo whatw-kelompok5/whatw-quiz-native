@@ -5,8 +5,9 @@ import googleIcon from '../assets/google.png';
 import WaterWave from '../components/WaterWave';
 import { ImageBackground } from 'react-native';
 import ReversedWaterWave from '../components/ReversedWaterWave';
+import 'expo-dev-client';
 
-export default function Login({ navigation }) {
+export default function Login({ promptAsync }) {
   return (
     <ImageBackground source={require('../assets/background.png')} style={{ flex: 1 }}>
       <View style={{ flex: 1, position: 'relative' }}>
@@ -42,7 +43,7 @@ export default function Login({ navigation }) {
                 action="primary"
                 isDisabled={false}
                 isFocusVisible={false}
-                onPress={() => navigation.navigate('Profile')}>
+                onPress={() => promptAsync()}>
                 <View display="flex" flexDirection="row" gap={4}>
                   <Image source={googleIcon} alt="Google Icon" width={20} height={20} />
                   <ButtonText>

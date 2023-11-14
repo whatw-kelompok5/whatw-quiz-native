@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Image, TouchableOpacity, StyleSheet, Text, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Mali_600SemiBold } from "@expo-google-fonts/mali";
+import { Button } from '@gluestack-ui/themed';
 
 const WinnerComponent = ({ navigation }) => {
-  // Load fonts
   const [fontsLoaded] = useFonts({
     Mali_600SemiBold,
   });
@@ -99,11 +99,11 @@ const WinnerComponent = ({ navigation }) => {
               Start Again
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.bottomButton2} onPress={() => navigation.navigate('StartGame')}>
+          <Button style={styles.bottomButton2} onPress={() => navigation.goBack()}>
             <Text style={{ textAlign: 'center', fontSize: 30, color: 'white', fontFamily: 'Mali_600SemiBold' }}>
               Back To Home
             </Text>
-          </TouchableOpacity>
+          </Button>
         </View>
       </View>
     </>
