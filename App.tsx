@@ -1,16 +1,16 @@
-import { GluestackUIProvider, View, Box } from '@gluestack-ui/themed';
+import { GluestackUIProvider } from '@gluestack-ui/themed';
 import React from 'react';
 import { config } from '@gluestack-ui/config';
 import Login from './src/screens/Login';
 import Profile from './src/screens/Profile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import WaterWave from './src/components/WaterWave';
 import Task from './src/screens/Task';
 import SplashScreenComponent from './src/screens/SplashScreen';
 import Matching from './src/screens/Matching';
 import WinnerComponent from './src/screens/Winner';
 import StartGameComponent from './src/screens/StartGame';
+import Auth from './src/screens/Auth';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +20,7 @@ export default function App() {
       <GluestackUIProvider config={config}>
         <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Auth" component={Auth} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Task" component={Task} />
           <Stack.Screen name="StartGame" component={StartGameComponent} />
